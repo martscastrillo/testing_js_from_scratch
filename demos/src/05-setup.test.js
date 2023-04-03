@@ -1,7 +1,22 @@
 describe('group 1', () => {
+    // beforeAll es una sentencia [setup] que corre antes de todas las pruebas xej up db
     beforeAll(() => {
         console.log('beforeAll');
-        // up db
+       
+      });
+       // afterAll es lo mismo pero después XD.
+      afterAll(() => {
+        console.log('afterAll');
+    
+      });
+      // beforeEach corre antes de cada caso de prueba hasta el último.
+      beforeEach(() => {
+        console.log(beforeEach);
+      });
+
+      // afterEach es lo mismo pero después
+      afterEach(() => {
+        console.log(afterEach);
       });
     test('case 1', () => {
         console.log('case 1');
@@ -11,10 +26,7 @@ describe('group 1', () => {
         console.log('case 2');
         expect(1 + 3).toBe(4);
     });
-    afterAll(() => {
-        console.log('afterAll');
-        // down db
-      });
+
 });
 
 describe('group 2', () => {
