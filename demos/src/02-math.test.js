@@ -18,7 +18,6 @@ describe('Test for Math', () => {
   });
 
   describe('Test for divide', () => {
-
     test('should divide', () => {
       const rta = divide(12, 4);
       expect(rta).toBe(3);
@@ -32,11 +31,5 @@ describe('Test for Math', () => {
       const rta2 = divide(4, 0);
       expect(rta2).toBeNull();
     });
-
-
   });
-
 });
-
-
-
