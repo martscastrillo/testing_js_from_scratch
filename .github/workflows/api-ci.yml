@@ -1,0 +1,33 @@
+name: API CI
+#on: [oush]
+on:
+  push:
+    path:
+      - "./api/**"
+      -".github/workflows/api-ci.yml"
+
+
+
+defaults:
+  run:
+    working-directory: ./api
+
+jobs: 
+  unit-test:
+    runs-on: ios-latest
+    steps:
+      - name: Checkout
+      uses: actions/checkout@v2
+       - name: Setuo Nodejs
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+        cache: 'npm'
+        cache-dependency-path: ./api/package-lock.json
+      - name: install
+        shell: bash
+        run: npm ci
+      - name: run unit test
+        shell: bash
+        run: npm run test
+      
